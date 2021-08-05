@@ -11,6 +11,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "micri": "^4.3.0"
+    "micro": "^9.3.4"
   }
 }
