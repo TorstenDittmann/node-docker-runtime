@@ -23,7 +23,7 @@ const server = micro(async (req, res) => {
         if (!(userFunction || userFunction.constructor || userFunction.call || userFunction.apply)) {
             throw new Error("User function is not valid.")
         }
-        await userFunction(request, response);
+        userFunction(request, response);
     } catch (error) {
         send(res, 500, {
             code: 500,
