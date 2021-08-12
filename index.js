@@ -23,17 +23,7 @@ const server = micro(async (req, res) => {
         if (!(userFunction || userFunction.constructor || userFunction.call || userFunction.apply)) {
             throw new Error("User function is not valid.")
         }
-
-        const timer = setTimeout(() => {
-            send(res, 500, {
-                code: 500,
-                message: `Function timed out after ${TIMEOUT}ms.`
-            });
-            process.exit();
-        }, TIMEOUT);
-
         await userFunction(request, response);
-        clearTimeout(timer);
     } catch (error) {
         send(res, 500, {
             code: 500,
