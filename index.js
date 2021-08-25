@@ -2,8 +2,6 @@ const path = require("path");
 const micro = require("micro");
 const { json, send } = require("micro");
 
-const TIMEOUT = process.env.TIMEOUT === undefined ? 5_000 : +process.env.TIMEOUT;
-
 const server = micro(async (req, res) => {
     const body = await json(req);
 
