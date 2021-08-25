@@ -5,7 +5,7 @@ docker build -t node-runtime .
 ```
 
 ```bash
-docker run -e TIMEOUT=5000 -p 3000:3000 -v /your_code/path:/usr/code node-runtime
+docker run -p 3000:3000 -v /your_code/path:/usr/code node-runtime
 ```
 
 # request
