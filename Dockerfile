@@ -10,6 +10,7 @@ COPY package* /usr/src/app
 
 RUN npm install pm2 -g
 
+
 RUN npm ci && npm cache clean --force
 
 COPY . .
